@@ -1,3 +1,4 @@
+# Find One Local Maximum 
 You need to get array of numbers as run time input. 
 You need to return the value and an index to a “local maximum”.
 
@@ -6,7 +7,7 @@ In the case of the array edges, the condition is reduced to one adjacent element
 If there are multiple “local maxima”, returning any one of them is fine.
 
 
-case 01- Check from start to end
+## Case 01- Check from start to end one by one
 (Worst case No of check=n-1)
 
 package findonelocalmaximum;
@@ -64,3 +65,8 @@ public class FindOneLocalMaximum {
         }
     }
 }
+
+
+## Case 02- Start from the middle element. If it's not the peack go for the side which is greater than middle element. Then check the middle value of that side (n/4 or 3n/4).
+Likewise continue until the peak is found.
+(Best case No of check<n/2)
