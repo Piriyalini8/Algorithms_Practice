@@ -6,6 +6,8 @@ In the case of the array edges, the condition is reduced to one adjacent element
 If there are multiple “local maxima”, returning any one of them is fine.
 
 
+case 01- Check from start to end
+
 package findonelocalmaximum;
 import java.util.Scanner;
 
