@@ -66,7 +66,7 @@ public class FindOneLocalMaximum {
     }
 }
 
-✔✔✔✔✔✔✔✔✔✔✔
+✅✅✅✅✅✅✅✅
 ## Case 02- Start from the middle element. If it's not the peack go for the side which is greater than middle element. Then check the middle value of that side (n/4 or 3n/4).
 Likewise continue until the peak is found.
 (Best case No of check<n/2)
