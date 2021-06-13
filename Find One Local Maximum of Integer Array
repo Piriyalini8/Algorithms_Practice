@@ -6,7 +6,7 @@ element, which is defined as an element that is greater than both its adjacent e
 In the case of the array edges, the condition is reduced to one adjacent element. 
 If there are multiple “local maxima”, returning any one of them is fine.
 
-
+❌❌❌❌❌❌
 ## Case 01- Check from start to end one by one
 (Worst case No of check=n-1)
 
@@ -66,7 +66,69 @@ public class FindOneLocalMaximum {
     }
 }
 
-
+✔✔✔✔✔✔✔✔✔✔✔
 ## Case 02- Start from the middle element. If it's not the peack go for the side which is greater than middle element. Then check the middle value of that side (n/4 or 3n/4).
 Likewise continue until the peak is found.
 (Best case No of check<n/2)
+
+
+package findonelocalmaximum;
+import java.util.Scanner;
+
+public class FindOneLocalMaximumDriver {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        FindOneLocalMaximum lmax=new FindOneLocalMaximum();
+        
+        //get maximum length of array
+        System.out.print("Number of integers you like to insert: ");
+        lmax.maxNumbers = sc.nextInt();
+        //initialize an array
+        lmax.num=new int[lmax.maxNumbers];
+        
+        
+        //take input array values
+        for(int i=0;i<lmax.maxNumbers;i++){
+            System.out.println("Enter number: "+(i+1));
+            lmax.num[i]=sc.nextInt();
+        }
+        if(lmax.num[0]>lmax.num[1]){
+           System.out.println("Local Maximum from starting: "+lmax.num[0]);
+            System.out.println("Index of local max: "+0); 
+        }
+        else{
+            if(lmax.num[lmax.maxNumbers-1]>lmax.num[lmax.maxNumbers-2]){
+                System.out.println("Local Maximum from starting: "+lmax.num[lmax.maxNumbers-1]);
+            System.out.println("Index of local max: "+(lmax.maxNumbers-1));
+            }
+            else{
+                lmax.middle=lmax.maxNumbers/2;
+                lmax.findPeak(lmax.middle);
+            }
+        }
+    }
+}
+
+class FindOneLocalMaximum{
+    int max;
+    int middle;
+    int[] num;
+    int maxNumbers;
+    public void findPeak(int middle){
+            if(num[middle]>num[middle-1]&&num[middle]>num[middle+1]){       
+            System.out.println("Local Maximum from starting: "+num[middle]);
+            System.out.println("Index of local max: "+middle);
+        }
+        else{
+            if(num[middle]<num[middle+1]){
+                middle=middle+(middle/2);
+                this.findPeak(middle);
+            }
+            else if(num[middle]<num[middle-1]){ 
+                middle=middle-(middle/2);
+                this.findPeak(middle);
+            } 
+        }
+    }
+}
+
