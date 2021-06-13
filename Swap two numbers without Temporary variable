@@ -1,0 +1,27 @@
+Swap two numbers with Temporary variable
+
+Enter x,y;
+temp=x;
+x=y;
+y=temp;
+print x,y;
+
+
+Swap Two numbers without a Temporary Variable
+Algorithm:
+
+Method 1=>
+Enter x,y;
+print x,y;
+x=x+y;
+y=x-y;
+x=x-y;
+print x,y;
+
+Method 2=>
+Enter x,y;
+print x,y;
+x=x*y;
+y=x/y;
+x=x/y;
+print x,y;
