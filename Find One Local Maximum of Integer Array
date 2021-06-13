@@ -7,6 +7,7 @@ If there are multiple “local maxima”, returning any one of them is fine.
 
 
 case 01- Check from start to end
+(Worst case No of check=n-1)
 
 package findonelocalmaximum;
 import java.util.Scanner;
