@@ -1,0 +1,33 @@
+I have practieced Bubble Sort for sorting a given integer array.
+Here each element of the array is compared with its adjacent element.
+
+Java code for Bubble Sort:-
+package bubblesort;
+
+/**
+ *
+ * @author priyalini
+ */
+public class BubbleSort {
+
+    public static void main(String[] args) {
+        int[] a = {10, 9, 7, 101, 23, 44, 12, 78, 34, 23};
+        int x = 0;
+        while (x <= 8) {
+            int y = x + 1;
+            while (y <= 9) {
+                if (a[x] > a[y]) {
+                    int temp = a[x];
+                    a[x] = a[y];
+                    a[y] = temp;
+                }
+                y++;
+            }
+            x++;
+        }
+        System.out.println("Printing Sorted List ...");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(a[i]);
+        }
+    }
+}
