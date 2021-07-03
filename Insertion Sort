@@ -1,5 +1,6 @@
 Sort a given integer array using Insertion Sort method.
-Here I have shown the Array after every pass in the sorting
+In Insertion Sort each elements are inserted onto its proper place in the sorted array.
+Here I have shown the Array after every pass in the sorting.
 
 Java code for Insertion Sort:-
  
