@@ -1,0 +1,37 @@
+
+Check whether the given number is Disarium Number or not:
+When the sum of given numbers' digit raised to the power of their respective positions is equal to the number itself is called Disarium Number 
+  For example:
+  input=175
+  Process: sum= 1^1+7^2+5^3 = 175 => input=sum value
+  
+  Java code =>
+  
+package disariumnumber;
+/**
+ *
+ * @author priyalini
+ */
+public class DisariumNumber {
+
+    public static void main(String[] args) {
+        int num = 175;
+        int length = 0, sum = 0, rem = 0, i = 0, a = num, n = num;
+        while (n != 0) {
+            n = n / 10;
+            length += 1;
+        }
+        while (i < length) {
+            rem = a % 10;
+            sum = sum + (int) Math.pow(rem, length);
+            a = a / 10;
+            length--;
+        }
+        System.out.println("Num,Sum : " + num + "," + sum);
+        if (num == sum) {
+            System.out.println("Number is Disarium number");
+        } else {
+            System.out.println("Number is not Disarium number");
+        }
+    }
+}
